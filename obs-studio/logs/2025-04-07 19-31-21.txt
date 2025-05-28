@@ -1,0 +1,357 @@
+19:31:21.019: Platform: Wayland
+19:31:21.019: CPU Name: AMD Ryzen 7 8845HS w/ Radeon 780M Graphics
+19:31:21.019: CPU Speed: 1806.030MHz
+19:31:21.019: Physical Cores: 8, Logical Cores: 16
+19:31:21.019: Physical Memory: 31266MB Total, 16098MB Free
+19:31:21.019: Kernel Version: Linux 6.14.0-4-cachyos
+19:31:21.019: Distribution: "CachyOS Linux" Unknown
+19:31:21.019: Desktop Environment: KDE (KDE)
+19:31:21.019: Session Type: wayland
+19:31:21.020: Qt Version: 6.9.0 (runtime), 6.8.3 (compiled)
+19:31:21.020: Portable mode: false
+19:31:21.045: OBS 31.0.3 (linux)
+19:31:21.045: ---------------------------------
+19:31:21.045: ---------------------------------
+19:31:21.045: audio settings reset:
+19:31:21.045: 	samples per sec: 48000
+19:31:21.045: 	speakers:        2
+19:31:21.045: 	max buffering:   960 milliseconds
+19:31:21.045: 	buffering type:  dynamically increasing
+19:31:21.046: ---------------------------------
+19:31:21.046: Initializing OpenGL...
+19:31:21.046: Using EGL/Wayland
+19:31:21.052: Initialized EGL 1.5
+19:31:21.064: Loading up OpenGL on adapter AMD AMD Radeon Graphics (radeonsi, phoenix, LLVM 19.1.7, DRM 3.61, 6.14.0-4-cachyos)
+19:31:21.064: OpenGL loaded successfully, version 4.6 (Core Profile) Mesa 25.0.3-cachyos1.2, shading language 4.60
+19:31:21.086: ---------------------------------
+19:31:21.086: video settings reset:
+19:31:21.086: 	base resolution:   1920x1080
+19:31:21.086: 	output resolution: 1280x720
+19:31:21.086: 	downscale filter:  Bicubic
+19:31:21.086: 	fps:               30/1
+19:31:21.086: 	format:            NV12
+19:31:21.086: 	YUV mode:          Rec. 709/Partial
+19:31:21.086: NV12 texture support enabled
+19:31:21.086: P010 texture support not available
+19:31:21.089: Audio monitoring device:
+19:31:21.089: 	name: Default
+19:31:21.089: 	id: default
+19:31:21.089: ---------------------------------
+19:31:21.097: Failed to load 'en-US' text for module: 'decklink-captions.so'
+19:31:21.102: Failed to load 'en-US' text for module: 'decklink-output-ui.so'
+19:31:21.107: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+19:31:21.107: Failed to initialize module 'decklink.so'
+19:31:21.210: [pipewire] Available capture sources:
+19:31:21.210: [pipewire]     - Monitor source
+19:31:21.210: [pipewire]     - Window source
+19:31:21.266: VAAPI: API version 1.22
+19:31:21.268: FFmpeg VAAPI H264 encoding supported
+19:31:21.271: FFmpeg VAAPI AV1 encoding supported
+19:31:21.275: FFmpeg VAAPI HEVC encoding supported
+19:31:21.295: os_dlopen(libnvidia-encode.so.1->libnvidia-encode.so.1): libnvidia-encode.so.1: cannot open shared object file: No such file or directory
+19:31:21.295: 
+19:31:21.295: NVENC not supported
+19:31:21.295: Failed to initialize module 'obs-nvenc.so'
+19:31:21.355: os_dlopen(/usr/lib/obs-plugins/obs-websocket.so->/usr/lib/obs-plugins/obs-websocket.so): libqrcodegencpp.so.1: cannot open shared object file: No such file or directory
+19:31:21.355: 
+19:31:21.356: os_dlopen(/usr/lib/obs-plugins/obs-websocket.so->/usr/lib/obs-plugins/obs-websocket.so): libqrcodegencpp.so.1: cannot open shared object file: No such file or directory
+19:31:21.356: 
+19:31:21.356: Module '/usr/lib/obs-plugins/obs-websocket.so' not loaded
+19:31:21.373: ---------------------------------
+19:31:21.373:   Loaded Modules:
+19:31:21.373:     text-freetype2.so
+19:31:21.373:     rtmp-services.so
+19:31:21.373:     obs-x264.so
+19:31:21.373:     obs-webrtc.so
+19:31:21.373:     obs-vst.so
+19:31:21.373:     obs-transitions.so
+19:31:21.373:     obs-qsv11.so
+19:31:21.373:     obs-outputs.so
+19:31:21.373:     obs-libfdk.so
+19:31:21.373:     obs-filters.so
+19:31:21.373:     obs-ffmpeg.so
+19:31:21.373:     linux-v4l2.so
+19:31:21.373:     linux-pulseaudio.so
+19:31:21.373:     linux-pipewire.so
+19:31:21.373:     linux-jack.so
+19:31:21.373:     linux-capture.so
+19:31:21.373:     linux-alsa.so
+19:31:21.373:     image-source.so
+19:31:21.373:     frontend-tools.so
+19:31:21.373:     decklink-output-ui.so
+19:31:21.373:     decklink-captions.so
+19:31:21.373: ---------------------------------
+19:31:21.373: ---------------------------------
+19:31:21.373: Available Encoders:
+19:31:21.373:   Video Encoders:
+19:31:21.374: 	- ffmpeg_svt_av1 (SVT-AV1)
+19:31:21.374: 	- ffmpeg_aom_av1 (AOM AV1)
+19:31:21.374: 	- ffmpeg_vaapi_tex (FFmpeg VAAPI H.264)
+19:31:21.374: 	- av1_ffmpeg_vaapi_tex (FFmpeg VAAPI AV1)
+19:31:21.374: 	- hevc_ffmpeg_vaapi_tex (FFmpeg VAAPI HEVC)
+19:31:21.374: 	- obs_x264 (x264)
+19:31:21.374:   Audio Encoders:
+19:31:21.374: 	- ffmpeg_aac (FFmpeg AAC)
+19:31:21.374: 	- ffmpeg_opus (FFmpeg Opus)
+19:31:21.374: 	- ffmpeg_pcm_s16le (FFmpeg PCM (16位))
+19:31:21.374: 	- ffmpeg_pcm_s24le (FFmpeg PCM (24位))
+19:31:21.374: 	- ffmpeg_pcm_f32le (FFmpeg PCM (32位浮点))
+19:31:21.374: 	- ffmpeg_alac (FFmpeg ALAC (24位))
+19:31:21.374: 	- ffmpeg_flac (FFmpeg FLAC (16位))
+19:31:21.374: 	- libfdk_aac (libfdk AAC)
+19:31:21.374: ==== Startup complete ===============================================
+19:31:21.410: All scene data cleared
+19:31:21.410: ------------------------------------------------
+19:31:21.414: pulse-input: Server name: 'PulseAudio (on PipeWire 1.4.1) 15.0.0'
+19:31:21.414: pulse-input: Audio format: s32le, 48000 Hz, 2 channels
+19:31:21.414: pulse-input: Started recording from 'alsa_output.pci-0000_05_00.6.analog-stereo.monitor' (default)
+19:31:21.414: [Loaded global audio device]: 'Desktop Audio'
+19:31:21.414: pulse-input: Server name: 'PulseAudio (on PipeWire 1.4.1) 15.0.0'
+19:31:21.414: pulse-input: Audio format: s32le, 48000 Hz, 2 channels
+19:31:21.414: pulse-input: Started recording from 'alsa_input.pci-0000_05_00.6.analog-stereo' (default)
+19:31:21.414: [Loaded global audio device]: 'Mic/Aux'
+19:31:21.414: PipeWire initialized
+19:31:21.415: Switched to scene 'Scene'
+19:31:21.415: ------------------------------------------------
+19:31:21.415: Loaded scenes:
+19:31:21.415: - scene 'Scene':
+19:31:21.415:     - source: 'Screen Capture (PipeWire)' (pipewire-screen-capture-source)
+19:31:21.415: ------------------------------------------------
+19:31:21.458: [pipewire] Screencast session created
+19:31:21.537: [pipewire] Asking for monitor and window
+19:31:21.542: [pipewire] source selected, setting up screencast
+19:31:21.546: [pipewire] Server version: 1.4.1
+19:31:21.546: [pipewire] Library version: 1.4.1
+19:31:21.546: [pipewire] Header version: 1.4.1
+19:31:21.546: [pipewire] Created stream 0x5a21a5f2efe0
+19:31:21.546: [pipewire] Stream 0x5a21a5f2efe0 state: "connecting" (error: none)
+19:31:21.547: [pipewire] Playing stream 0x5a21a5f2efe0
+19:31:21.547: [pipewire] Stream 0x5a21a5f2efe0 state: "paused" (error: none)
+19:31:21.552: [pipewire] Negotiated format:
+19:31:21.552: [pipewire]     Format: 12 (Spa:Enum:VideoFormat:BGRA)
+19:31:21.552: [pipewire]     Modifier: 0x0
+19:31:21.552: [pipewire]     Size: 2560x1440
+19:31:21.552: [pipewire]     Framerate: 0/1
+19:31:21.555: [pipewire] Negotiated format:
+19:31:21.556: [pipewire]     Format: 12 (Spa:Enum:VideoFormat:BGRA)
+19:31:21.556: [pipewire]     Modifier: 0x20000001046bb04
+19:31:21.556: [pipewire]     Size: 2560x1440
+19:31:21.556: [pipewire]     Framerate: 0/1
+19:31:21.577: [pipewire] Stream 0x5a21a5f2efe0 state: "streaming" (error: none)
+19:31:21.985: adding 42 milliseconds of audio buffering, total audio buffering is now 42 milliseconds (source: Desktop Audio)
+19:31:21.985: 
+19:31:34.487: Switched to Preview/Program mode
+19:31:34.487: ------------------------------------------------
+19:31:37.857: Switched to scene 'Scene'
+19:31:37.858: Switched to regular Preview mode
+19:31:37.858: ------------------------------------------------
+19:31:38.419: ReadOne on org.freedesktop.portal.Settings returned an invalid reply
+19:31:38.419: ReadOne on org.freedesktop.portal.Settings returned an invalid reply
+19:32:12.154: Settings changed (audio)
+19:32:12.154: ------------------------------------------------
+19:32:13.807: ---------------------------------
+19:32:13.807: [x264 encoder: 'simple_video_stream'] preset: veryfast
+19:32:13.807: [x264 encoder: 'simple_video_stream'] settings:
+19:32:13.807: 	rate_control: CBR
+19:32:13.807: 	bitrate:      2500
+19:32:13.807: 	buffer size:  2500
+19:32:13.807: 	crf:          23
+19:32:13.807: 	fps_num:      30
+19:32:13.807: 	fps_den:      1
+19:32:13.807: 	width:        1280
+19:32:13.807: 	height:       720
+19:32:13.807: 	keyint:       250
+19:32:13.807: 
+19:32:13.813: libfdk_aac encoder created
+19:32:13.813: libfdk_aac bitrate: 160, channels: 2
+19:32:13.815: ==== Recording Start ===============================================
+19:32:13.815: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/dich/2025-04-07 19-32-13.mkv'...
+19:32:45.194: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/dich/2025-04-07 19-32-13.mkv' stopped
+19:32:45.194: Output 'simple_file_output': stopping
+19:32:45.194: Output 'simple_file_output': Total frames output: 905
+19:32:45.194: Output 'simple_file_output': Total drawn frames: 942
+19:32:45.194: ==== Recording Stop ================================================
+19:32:45.199: libfdk_aac encoder destroyed
+19:33:13.546: ReadOne on org.freedesktop.portal.Settings returned an invalid reply
+19:33:13.546: ReadOne on org.freedesktop.portal.Settings returned an invalid reply
+19:33:42.318: pulse-input: Server name: 'PulseAudio (on PipeWire 1.4.1) 15.0.0'
+19:33:42.318: pulse-input: Audio format: s32le, 48000 Hz, 2 channels
+19:33:42.318: pulse-input: Started recording from 'alsa_output.pci-0000_05_00.1.hdmi-stereo-extra1.monitor'
+19:33:42.319: pulse-input: Server name: 'PulseAudio (on PipeWire 1.4.1) 15.0.0'
+19:33:42.319: pulse-input: Audio format: s32le, 48000 Hz, 2 channels
+19:33:42.319: pulse-input: Started recording from 'alsa_input.pci-0000_05_00.6.analog-stereo' (default)
+19:33:42.319: Audio monitoring device:
+19:33:42.319: 	name: Family 17h/19h/1ah HD Audio Controller Analog Stereo
+19:33:42.319: 	id: alsa_output.pci-0000_05_00.6.analog-stereo
+19:33:42.322: Number of remaining views: 1
+19:33:42.322: ---------------------------------
+19:33:42.322: video settings reset:
+19:33:42.322: 	base resolution:   1920x1080
+19:33:42.322: 	output resolution: 1280x720
+19:33:42.322: 	downscale filter:  Bicubic
+19:33:42.322: 	fps:               30/1
+19:33:42.322: 	format:            NV12
+19:33:42.322: 	YUV mode:          Rec. 709/Partial
+19:33:42.322: NV12 texture support enabled
+19:33:42.322: P010 texture support not available
+19:33:42.324: Settings changed (audio, advanced)
+19:33:42.324: ------------------------------------------------
+19:33:45.396: ---------------------------------
+19:33:45.396: [x264 encoder: 'simple_video_stream'] preset: veryfast
+19:33:45.396: [x264 encoder: 'simple_video_stream'] settings:
+19:33:45.396: 	rate_control: CBR
+19:33:45.396: 	bitrate:      2500
+19:33:45.396: 	buffer size:  2500
+19:33:45.396: 	crf:          23
+19:33:45.396: 	fps_num:      30
+19:33:45.396: 	fps_den:      1
+19:33:45.396: 	width:        1280
+19:33:45.396: 	height:       720
+19:33:45.396: 	keyint:       250
+19:33:45.396: 
+19:33:45.403: libfdk_aac encoder created
+19:33:45.403: libfdk_aac bitrate: 160, channels: 2
+19:33:45.404: ==== Recording Start ===============================================
+19:33:45.404: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/dich/2025-04-07 19-33-45.mkv'...
+19:33:48.719: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/dich/2025-04-07 19-33-45.mkv' stopped
+19:33:48.719: Output 'simple_file_output': stopping
+19:33:48.719: Output 'simple_file_output': Total frames output: 63
+19:33:48.719: Output 'simple_file_output': Total drawn frames: 99
+19:33:48.719: ==== Recording Stop ================================================
+19:33:48.729: libfdk_aac encoder destroyed
+19:35:19.237: ---------------------------------
+19:35:19.237: [x264 encoder: 'simple_video_stream'] preset: veryfast
+19:35:19.237: [x264 encoder: 'simple_video_stream'] settings:
+19:35:19.237: 	rate_control: CBR
+19:35:19.237: 	bitrate:      2500
+19:35:19.237: 	buffer size:  2500
+19:35:19.237: 	crf:          23
+19:35:19.237: 	fps_num:      30
+19:35:19.237: 	fps_den:      1
+19:35:19.237: 	width:        1280
+19:35:19.237: 	height:       720
+19:35:19.237: 	keyint:       250
+19:35:19.237: 
+19:35:19.243: libfdk_aac encoder created
+19:35:19.243: libfdk_aac bitrate: 160, channels: 2
+19:35:19.243: ==== Recording Start ===============================================
+19:35:19.244: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/dich/2025-04-07 19-35-19.mkv'...
+19:35:24.965: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/dich/2025-04-07 19-35-19.mkv' stopped
+19:35:24.965: Output 'simple_file_output': stopping
+19:35:24.965: Output 'simple_file_output': Total frames output: 135
+19:35:24.965: Output 'simple_file_output': Total drawn frames: 172
+19:35:24.965: ==== Recording Stop ================================================
+19:35:24.974: libfdk_aac encoder destroyed
+19:37:16.265: ---------------------------------
+19:37:16.265: [x264 encoder: 'simple_video_stream'] preset: veryfast
+19:37:16.265: [x264 encoder: 'simple_video_stream'] settings:
+19:37:16.265: 	rate_control: CBR
+19:37:16.265: 	bitrate:      2500
+19:37:16.265: 	buffer size:  2500
+19:37:16.265: 	crf:          23
+19:37:16.265: 	fps_num:      30
+19:37:16.265: 	fps_den:      1
+19:37:16.265: 	width:        1280
+19:37:16.265: 	height:       720
+19:37:16.265: 	keyint:       250
+19:37:16.265: 
+19:37:16.268: libfdk_aac encoder created
+19:37:16.268: libfdk_aac bitrate: 160, channels: 2
+19:37:16.269: ==== Recording Start ===============================================
+19:37:16.269: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/dich/2025-04-07 19-37-16.mkv'...
+19:37:19.995: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/dich/2025-04-07 19-37-16.mkv' stopped
+19:37:19.996: Output 'simple_file_output': stopping
+19:37:19.996: Output 'simple_file_output': Total frames output: 75
+19:37:19.996: Output 'simple_file_output': Total drawn frames: 112
+19:37:19.996: ==== Recording Stop ================================================
+19:37:20.000: libfdk_aac encoder destroyed
+19:38:28.777: ---------------------------------
+19:38:28.777: [x264 encoder: 'simple_video_stream'] preset: veryfast
+19:38:28.777: [x264 encoder: 'simple_video_stream'] settings:
+19:38:28.777: 	rate_control: CBR
+19:38:28.777: 	bitrate:      2500
+19:38:28.777: 	buffer size:  2500
+19:38:28.777: 	crf:          23
+19:38:28.777: 	fps_num:      30
+19:38:28.777: 	fps_den:      1
+19:38:28.777: 	width:        1280
+19:38:28.777: 	height:       720
+19:38:28.777: 	keyint:       250
+19:38:28.777: 
+19:38:28.784: libfdk_aac encoder created
+19:38:28.784: libfdk_aac bitrate: 160, channels: 2
+19:38:28.785: ==== Recording Start ===============================================
+19:38:28.785: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/dich/2025-04-07 19-38-28.mkv'...
+19:38:33.030: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/dich/2025-04-07 19-38-28.mkv' stopped
+19:38:33.030: Output 'simple_file_output': stopping
+19:38:33.030: Output 'simple_file_output': Total frames output: 91
+19:38:33.030: Output 'simple_file_output': Total drawn frames: 128
+19:38:33.031: ==== Recording Stop ================================================
+19:38:33.036: libfdk_aac encoder destroyed
+19:39:39.714: ReadOne on org.freedesktop.portal.Settings returned an invalid reply
+19:39:39.715: ReadOne on org.freedesktop.portal.Settings returned an invalid reply
+19:41:15.922: This plugin supports grabbing the mouse only for popup windows
+19:41:16.130: This plugin supports grabbing the mouse only for popup windows
+19:41:35.566: User added filter '噪声抑制' (noise_suppress_filter_v2) to source '麦克风/Aux 2'
+19:41:35.595: adding 64 milliseconds of audio buffering, total audio buffering is now 106 milliseconds (source: 麦克风/Aux 2)
+19:41:35.595: 
+19:41:43.446: adding 106 milliseconds of audio buffering, total audio buffering is now 213 milliseconds (source: 麦克风/Aux 2)
+19:41:43.446: 
+19:41:55.549: User added filter '噪声门限' (noise_gate_filter) to source '麦克风/Aux 2'
+19:42:13.453: User removed filter '噪声门限' (noise_gate_filter) from source '麦克风/Aux 2'
+19:42:24.558: User added filter '噪声抑制' (noise_suppress_filter_v2) to source 'Mic/Aux'
+19:42:26.950: ---------------------------------
+19:42:26.950: [x264 encoder: 'simple_video_stream'] preset: veryfast
+19:42:26.950: [x264 encoder: 'simple_video_stream'] settings:
+19:42:26.950: 	rate_control: CBR
+19:42:26.950: 	bitrate:      2500
+19:42:26.950: 	buffer size:  2500
+19:42:26.950: 	crf:          23
+19:42:26.950: 	fps_num:      30
+19:42:26.950: 	fps_den:      1
+19:42:26.950: 	width:        1280
+19:42:26.950: 	height:       720
+19:42:26.950: 	keyint:       250
+19:42:26.950: 
+19:42:26.954: libfdk_aac encoder created
+19:42:26.955: libfdk_aac bitrate: 160, channels: 2
+19:42:26.955: ==== Recording Start ===============================================
+19:42:26.955: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/dich/2025-04-07 19-42-26.mkv'...
+19:42:31.493: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/dich/2025-04-07 19-42-26.mkv' stopped
+19:42:31.493: Output 'simple_file_output': stopping
+19:42:31.493: Output 'simple_file_output': Total frames output: 100
+19:42:31.493: Output 'simple_file_output': Total drawn frames: 137
+19:42:31.493: ==== Recording Stop ================================================
+19:42:31.499: libfdk_aac encoder destroyed
+19:50:42.752: ---------------------------------
+19:50:42.752: [x264 encoder: 'simple_video_stream'] preset: veryfast
+19:50:42.752: [x264 encoder: 'simple_video_stream'] settings:
+19:50:42.752: 	rate_control: CBR
+19:50:42.752: 	bitrate:      2500
+19:50:42.752: 	buffer size:  2500
+19:50:42.752: 	crf:          23
+19:50:42.752: 	fps_num:      30
+19:50:42.752: 	fps_den:      1
+19:50:42.752: 	width:        1280
+19:50:42.752: 	height:       720
+19:50:42.752: 	keyint:       250
+19:50:42.752: 
+19:50:42.755: libfdk_aac encoder created
+19:50:42.755: libfdk_aac bitrate: 160, channels: 2
+19:50:42.756: ==== Recording Start ===============================================
+19:50:42.756: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/dich/2025-04-07 19-50-42.mkv'...
+19:50:47.966: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/dich/2025-04-07 19-50-42.mkv' stopped
+19:50:47.966: Output 'simple_file_output': stopping
+19:50:47.966: Output 'simple_file_output': Total frames output: 120
+19:50:47.966: Output 'simple_file_output': Total drawn frames: 157
+19:50:47.966: ==== Recording Stop ================================================
+19:50:47.971: libfdk_aac encoder destroyed
+19:53:50.230: adding 128 milliseconds of audio buffering, total audio buffering is now 341 milliseconds (source: 麦克风/Aux 2)
+19:53:50.230: 
+20:02:43.286: adding 64 milliseconds of audio buffering, total audio buffering is now 405 milliseconds (source: 麦克风/Aux 2)
+20:02:43.286: 
+20:22:48.301: ReadOne on org.freedesktop.portal.Settings returned an invalid reply
+20:22:48.302: ReadOne on org.freedesktop.portal.Settings returned an invalid reply
+20:23:03.532: Settings changed (outputs)
+20:23:03.532: ------------------------------------------------
+20:23:03.533: The Wayland connection experienced a fatal error: Bad file descriptor
