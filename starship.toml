@@ -55,15 +55,15 @@ format = "[$branch]($style)"
 style = "bright-black"
 
 [git_status]
-format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
-style = "cyan"
-conflicted = ""
-untracked = ""
-modified = ""
-staged = ""
-renamed = ""
-deleted = ""
-stashed = "≡"
+style = "teal"
+format = '([$all_status]($style))'
+conflicted = ""     # 代表冲突 merge
+untracked  = ""     # 问号图标 (NF)
+modified   = ""     # 圆点 (表示已改动)
+staged     = ""     # 打钩方框 (已暂存)
+renamed    = ""     # 箭头换名
+deleted    = ""     # 回收站图标 Nerd Font
+stashed    = "≡"     # 三条横线代表 stash
 
 [git_state]
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
