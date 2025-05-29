@@ -17,7 +17,6 @@
 # You can remove these comments if you want or leave
 # them for future reference.
 
-source ~/.local/share/atuin/init.nu
 mkdir ($nu.data-dir | path join "vendor/autoload")
 atuin init nu | save -f ($nu.data-dir | path join "vendor/autoload/atuin.nu")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
