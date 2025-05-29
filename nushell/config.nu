@@ -19,6 +19,7 @@
 
 source ~/.local/share/atuin/init.nu
 mkdir ($nu.data-dir | path join "vendor/autoload")
+atuin init nu | save -f ($nu.data-dir | path join "vendor/autoload/atuin.nu")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 # 彻底关闭启动欢迎横幅
 $env.config.show_banner = false
