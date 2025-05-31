@@ -22,17 +22,3 @@ atuin init nu | save -f ($nu.data-dir | path join "vendor/autoload/atuin.nu")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 # 彻底关闭启动欢迎横幅
 $env.config.show_banner = false
-
-
-
-# 交互式选择一个已装包，然后用 paru -Rs 卸载
-def paru-u [] {
-  # pacman -Qqe 列出所有显式安装的包名，管给 fzf 选一个
-  let pkg = (pacman -Qqe | lines | fzf)
-  if $pkg != '' {
-    # 选好了就卸载，并自动确认
-    paru -Rs --noconfirm $pkg
-  } else {
-    echo "Canceled."
-  }
-}
