@@ -5,9 +5,10 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 
 ## Plugins
 
-- Markdown support: using Markdown-priview.nvim
+- Markdown support: using Markdown-priview.nvim ## Fix Markdown Code-box display
 - Clipboard support: using nvim-osc52
 - Git UI support: using lazygit.nvim
+- Dashboard support: using snacks.nvim 
 
 ## Keymaps
 
