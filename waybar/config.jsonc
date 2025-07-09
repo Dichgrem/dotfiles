@@ -128,6 +128,7 @@
       "tooltip": false
   },
 
+/*
   "wireplumber": {
     "on-click": "pwvucontrol",
     "on-click-right": "easyeffects",
@@ -140,6 +141,21 @@
     "format-source-muted": "",
     "format-icons": {
       "default": ["", "", ""],
+    },
+  },
+*/
+  "wireplumber": {
+    "on-click": "pwvucontrol",
+    "on-click-right": "easyeffects",
+    "on-click-middle": "pamixer -t && swayosd-client --output-volume mute-toggle",
+    "on-scroll-down": "pamixer -d 2 && swayosd-client --output-volume -2",
+    "on-scroll-up": "pamixer -i 2 && swayosd-client --output-volume +2",
+    "format": "{icon} {volume}%",
+    "format-muted": "MUTE",
+    "format-source": "",
+    "format-source-muted": "",
+    "format-icons": {
+      "default": ["", "", ""]
     },
   },
 
