@@ -107,7 +107,7 @@
       "key": "│ ╠ Shell   │",
       "keyColor": "blue",
       "outputColor": "blue",
-      "format": "nushell",
+      "format": "{1}",
     },
     {
       "type": "terminal",
