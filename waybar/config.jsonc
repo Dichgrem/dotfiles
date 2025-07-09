@@ -10,7 +10,7 @@
     "custom/startmenu",
     "backlight",
     "battery",
-    "network",
+//   "network",
     "hyprland/workspaces",
     "niri/workspaces",
     "sway/workspaces"
@@ -59,7 +59,7 @@
     "format-plugged": " {capacity}%",
     "format-icons": ["", "", "", "", ""],
   },
-
+/*
   "network": {
     "interval": 3,
     "format": "{bandwidthUpBytes} {bandwidthDownBytes}",
@@ -68,7 +68,7 @@
     "on-click-right": "corestats",
     "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n",
   },
-
+*/
   "hyprland/workspaces": {
     "all-outputs": true,
     "format": "{name}",
