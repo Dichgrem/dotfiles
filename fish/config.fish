@@ -97,7 +97,6 @@ alias l.="eza -a | grep -e '^\.'" # show only dotfiles
 
 # Common use
 alias grubup="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-alias fixpacman="sudo rm /var/lib/pacman/db.lck"
 alias tarnow='tar -acf '
 alias untar='tar -zxvf '
 alias wget='wget -c '
@@ -115,8 +114,6 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias hw='hwinfo --short' # Hardware Info
 alias big="expac -H M '%m\t%n' | sort -h | nl" # Sort installed packages according to size in MB
-alias gitpkg='pacman -Q | grep -i "\-git" | wc -l' # List amount of -git packages
-alias update='sudo pacman -Syu'
 
 # Get fastest mirrors
 alias mirror="sudo cachyos-rate-mirrors"
