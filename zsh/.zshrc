@@ -1,7 +1,6 @@
 # ========================
 #  Locale & Editor
 # ========================
-export LANG=zh_CN.UTF-8
 export EDITOR=nano
 
 export PATH="$HOME/.atuin/bin:$PATH"
