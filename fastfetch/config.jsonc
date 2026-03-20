@@ -3,10 +3,9 @@
     "separator": " ",
   },
   "logo": {
-  "source": "apple",
-  "padding": {
-    "top": 0
-  },
+    "padding": {
+      "top": 0,
+    },
   },
   "modules": [
     {
@@ -107,7 +106,7 @@
       "key": "│ ╠ Shell   │",
       "keyColor": "blue",
       "outputColor": "blue",
-      "format": "{1}",
+      "format": "{6} {4}",
     },
     {
       "type": "terminal",
@@ -128,6 +127,26 @@
       "keyColor": "blue",
       "outputColor": "blue",
       "format": "{2}",
+    },
+    {
+      "type": "wm",
+      "key": "│ ╠󱂬 WM      │",
+      "keyColor": "blue",
+      "outputColor": "blue",
+      "format": "{2} {5}",
+    },
+    {
+      "type": "cursor",
+      "key": "│ ╠󱄨 Cursor  │",
+      "keyColor": "blue",
+      "outputColor": "blue",
+    },
+    {
+      "type": "font",
+      "key": "│ ╠ Font    │",
+      "keyColor": "blue",
+      "outputColor": "blue",
+      "format": "{1}",
     },
     {
       "type": "terminalfont",
@@ -159,4 +178,3 @@
     },
   ],
 }
-
