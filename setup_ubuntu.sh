@@ -85,27 +85,20 @@ echo ">>> 检查 Fastfetch..."
 if ! command -v fastfetch >/dev/null 2>&1; then
   echo ">>> Installing Fastfetch..."
 
-  ARCH=$(uname -m)
-  case $ARCH in
-    x86_64)
-      ARCH="amd64"
-      ;;
-    aarch64)
-      ARCH="aarch64"
-      ;;
-    armv7l)
-      ARCH="armv7"
-      ;;
+  RAW_ARCH=$(uname -m)
+  case $RAW_ARCH in
+    x86_64)   DL_ARCH="amd64" ;;
+    aarch64)  DL_ARCH="aarch64" ;;
+    armv7l)   DL_ARCH="armv7" ;;
     *)
-      echo "   ⚠️ 不支持的架构: $ARCH"
+      echo "   ⚠️ 不支持的架构: $RAW_ARCH，跳过 Fastfetch 安装"
+      DL_ARCH=""
       ;;
   esac
 
-  if [ "$ARCH" != "x86_64" ] && [ "$ARCH" != "aarch64" ] && [ "$ARCH" != "armv7" ]; then
-    echo "   ⚠️ 跳过 Fastfetch 安装"
-  else
+  if [ -n "$DL_ARCH" ]; then
     FASTFETCH_VERSION=$(curl -s "https://api.github.com/repos/fastfetch-cli/fastfetch/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
-    FASTFETCH_URL="https://github.com/fastfetch-cli/fastfetch/releases/download/${FASTFETCH_VERSION}/fastfetch-linux-${ARCH}.deb"
+    FASTFETCH_URL="https://github.com/fastfetch-cli/fastfetch/releases/download/${FASTFETCH_VERSION}/fastfetch-linux-${DL_ARCH}.deb"
 
     TEMP_DEB="/tmp/fastfetch.deb"
     wget -O "$TEMP_DEB" "$FASTFETCH_URL"
@@ -252,8 +245,8 @@ echo "   ✓ .zshrc 已生成"
 # 设置 GNOME Terminal 字体
 # =============================
 echo ">>> 检查 GNOME Terminal 字体..."
-if command -v gsettings >/dev/null; then
-  if gsettings list-schemas | grep -q "org.gnome.Terminal"; then
+if command -v gsettings >/dev/null 2>&1; then
+  if gsettings list-schemas 2>/dev/null | grep -q "org.gnome.Terminal"; then
     PROFILE_ID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "'")
     PROFILE_PATH="org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$PROFILE_ID/"
     CURRENT_FONT=$(gsettings get "$PROFILE_PATH" font 2>/dev/null | tr -d "'")
