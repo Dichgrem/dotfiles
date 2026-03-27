@@ -1,0 +1,67 @@
+[project]
+name = "bank"
+version = "0.1.0"
+requires-python = ">=3.10,<3.11"
+
+dependencies = [
+    # ===== 核心 =====
+    "numpy==1.26.4",
+
+    # ===== 数据 =====
+    "pandas",
+    "scipy",
+    "scikit-learn",
+    "statsmodels",
+    "numba==0.59.1",
+    "joblib",
+
+    # ===== 可视化 =====
+    "matplotlib",
+    "seaborn",
+    "plotly",
+
+    # ===== 工具 =====
+    "tqdm",
+    "requests>=2.31",
+    "beautifulsoup4",
+    "lxml",
+    "pyyaml",
+    "networkx",
+
+    # ===== NLP =====
+    "jieba",
+
+    # ===== 图像 =====
+    "opencv-python",
+    "pillow",
+
+    # ===== 数学 =====
+    "sympy",
+
+    # ===== Jupyter =====
+    "jupyterlab>=4.4.10",
+    "notebook",
+    "ipykernel",
+    "ipython",
+    "jupyterlab-language-pack-zh-cn>=4.4.post3",
+
+    # ===== 深度学习 =====
+    "tensorflow-cpu==2.15.0",
+    "torch==2.2.2",
+    "torchvision==0.17.2",
+    "torchaudio==2.2.2",
+    "torchinfo>=1.8.0",
+
+    # ===== 开发 =====
+    "pytest",
+    "flake8",
+    "black",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
