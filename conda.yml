@@ -1,0 +1,56 @@
+name: test
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  # ===== 核心 =====
+  - numpy=1.26.4
+  # ===== 数据 =====
+  - pandas
+  - scipy
+  - scikit-learn
+  - statsmodels
+  - numba=0.59.1
+  - joblib
+  # ===== 可视化 =====
+  - matplotlib
+  - seaborn
+  - plotly
+  # ===== 工具 =====
+  - tqdm
+  - requests>=2.31
+  - beautifulsoup4
+  - lxml
+  - pyyaml
+  - networkx
+  # ===== NLP =====
+  - jieba
+  # ===== 图像 =====
+  - opencv
+  - pillow
+  # ===== 数学 =====
+  - sympy
+  # ===== Jupyter =====
+  - jupyterlab>=4.4.10
+  - notebook
+  - ipykernel
+  - ipython
+  # ===== 深度学习（PyTorch CPU）=====
+  - pip
+  - pip:
+      # ===== TensorFlow =====
+      - tensorflow-cpu==2.15.0
+      # ===== PyTorch CPU =====
+      - --extra-index-url https://download.pytorch.org/whl/cpu
+      - torch==2.4.1+cpu
+      - torchvision==0.19.1+cpu
+      - torchaudio==2.4.1+cpu
+      - torchinfo>=1.8.0
+      # ===== Jupyter 中文包 =====
+      - jupyterlab-language-pack-zh-cn>=4.4.post3
+      # ===== 开发工具 =====
+      - pytest
+      - flake8
+      - black
