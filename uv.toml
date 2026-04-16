@@ -1,25 +1,21 @@
 [project]
 name = "bank"
 version = "0.1.0"
-requires-python = ">=3.10,<3.11"
-
+requires-python = ">=3.10"
 dependencies = [
     # ===== 核心 =====
-    "numpy==1.26.4",
-
+    "numpy",
     # ===== 数据 =====
     "pandas",
     "scipy",
     "scikit-learn",
     "statsmodels",
-    "numba==0.59.1",
+    "numba",
     "joblib",
-
     # ===== 可视化 =====
     "matplotlib",
     "seaborn",
     "plotly",
-
     # ===== 工具 =====
     "tqdm",
     "requests>=2.31",
@@ -27,31 +23,31 @@ dependencies = [
     "lxml",
     "pyyaml",
     "networkx",
-
     # ===== NLP =====
     "jieba",
-
     # ===== 图像 =====
     "opencv-python",
     "pillow",
-
     # ===== 数学 =====
     "sympy",
-
     # ===== Jupyter =====
-    "jupyterlab>=4.4.10",
+    "jupyterlab",
     "notebook",
     "ipykernel",
     "ipython",
-    "jupyterlab-language-pack-zh-cn>=4.4.post3",
-
+    "ipywidgets",
+    "jupyterlab-language-pack-zh-cn",
     # ===== 深度学习 =====
-    "tensorflow-cpu==2.15.0",
-    "torch==2.2.2",
-    "torchvision==0.17.2",
-    "torchaudio==2.2.2",
-    "torchinfo>=1.8.0",
-
+    "tensorflow-cpu",
+    "torch",
+    "torchvision",
+    "torchaudio",
+    "torchinfo",
+    "transformers<4.40",
+    "sentence-transformers",
+    # ===== embedding =====
+    "flagembedding",
+    "datasets",
     # ===== 开发 =====
     "pytest",
     "flake8",
@@ -62,6 +58,26 @@ dependencies = [
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools]
+py-modules = []
+
+[[tool.uv.index]]
+name = "pypi"
+url = "https://pypi.org/simple"
+
 [[tool.uv.index]]
 name = "pytorch-cpu"
 url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch      = { index = "pytorch-cpu" }
+torchvision = { index = "pytorch-cpu" }
+torchaudio  = { index = "pytorch-cpu" }
+
+[tool.uv]
+environments = [
+    "sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "sys_platform == 'darwin'",
+    "sys_platform == 'win32'",
+]
