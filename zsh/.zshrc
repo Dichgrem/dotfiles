@@ -2,7 +2,7 @@
 #  Locale & Editor
 # ========================
 export EDITOR=nano
-
+export COLORTERM=truecolor
 export PATH="$HOME/.atuin/bin:$PATH"
 
 # ========================
