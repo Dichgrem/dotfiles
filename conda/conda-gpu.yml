@@ -1,0 +1,81 @@
+name: bank-gpu
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python>=3.11
+  - pip
+  # ===== 核心 =====
+  - numpy
+  # ===== 数据处理 =====
+  - pandas
+  - scipy
+  - scikit-learn
+  - statsmodels
+  - numba
+  - joblib
+  # ===== 可视化 =====
+  - matplotlib
+  - seaborn
+  - plotly
+  # ===== 图像 =====
+  - opencv
+  - pillow
+  # ===== 数学 =====
+  - sympy
+  # ===== 通用工具 =====
+  - tqdm
+  - requests
+  - beautifulsoup4
+  - lxml
+  - pyyaml
+  - networkx
+  # ===== NLP =====
+  - jieba
+  # ===== 深度学习 (CUDA 12.1) =====
+  - pytorch::pytorch
+  - pytorch::torchvision
+  - pytorch::torchaudio
+  - pytorch-cuda=12.1
+  - conda-forge::faiss-gpu-cu12
+  # ===== Web =====
+  - streamlit
+  - flask
+  # ===== Jupyter =====
+  - jupyterlab
+  - notebook
+  - ipykernel
+  - ipython
+  - ipywidgets
+  # ===== 开发 =====
+  - pytest
+  - flake8
+  - black
+  - nbformat
+  - nbconvert
+  # ===== pip 包 =====
+  - pip:
+      - torchinfo
+      - transformers>=4.46
+      - accelerate
+      - tensorflow
+      # LangChain
+      - langchain>=1.2.17
+      - langchain-classic
+      - langchain-community>=0.4.1
+      - langchain-openai>=1.2.1
+      - langchain-google-genai>=4.2.2
+      - langchain-huggingface
+      - langchain-text-splitters
+      # 模型 / 嵌入 / 向量
+      - openai>=2.32.0
+      - modelscope>=1.36.1
+      - sentence-transformers
+      - datasets
+      - flagembedding
+      # 工具
+      - pdfplumber>=0.11.9
+      - pypdf>=6.10.2
+      # Jupyter 中文包
+      - jupyterlab-language-pack-zh-cn
