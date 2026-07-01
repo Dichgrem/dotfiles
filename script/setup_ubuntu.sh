@@ -7,11 +7,14 @@ if [ "$EUID" -eq 0 ]; then
   exit 1
 fi
 
+# 配置文件远程下载基础路径
+CONFIG_BASE="https://raw.githubusercontent.com/Dichgrem/dotfiles/main"
+
 # =============================
 #  基础软件
 # =============================
 echo ">>> 检查基础软件..."
-PACKAGES="build-essential curl wget git unzip ca-certificates gnupg lsb-release software-properties-common zsh neovim eza fzf zoxide"
+PACKAGES="build-essential curl wget git unzip ca-certificates gnupg lsb-release software-properties-common zsh neovim eza fzf zoxide btop tmux"
 TO_INSTALL=""
 
 for pkg in $PACKAGES; do
@@ -39,9 +42,9 @@ if ! command -v docker >/dev/null 2>&1; then
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
   echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
+    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
   https://download.docker.com/linux/ubuntu \
-  $(lsb_release -sc) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  $(lsb_release -sc) stable" | sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
 
   sudo apt update
   sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
@@ -87,13 +90,13 @@ if ! command -v fastfetch >/dev/null 2>&1; then
 
   RAW_ARCH=$(uname -m)
   case $RAW_ARCH in
-    x86_64)   DL_ARCH="amd64" ;;
-    aarch64)  DL_ARCH="aarch64" ;;
-    armv7l)   DL_ARCH="armv7" ;;
-    *)
-      echo "   ⚠️ 不支持的架构: $RAW_ARCH，跳过 Fastfetch 安装"
-      DL_ARCH=""
-      ;;
+  x86_64) DL_ARCH="amd64" ;;
+  aarch64) DL_ARCH="aarch64" ;;
+  armv7l) DL_ARCH="armv7" ;;
+  *)
+    echo "   ⚠️ 不支持的架构: $RAW_ARCH，跳过 Fastfetch 安装"
+    DL_ARCH=""
+    ;;
   esac
 
   if [ -n "$DL_ARCH" ]; then
@@ -124,8 +127,8 @@ if [ ! -f "$FONT_DIR/JetBrains Mono Nerd Font Mono.ttf" ]; then
 
   mkdir -p "$FONT_DIR"
 
-  wget -O "$ZIP_FILE" "$ZIP_URL" || \
-  wget -O "$ZIP_FILE" "https://download.fastgit.org/ryanoasis/nerd-fonts/releases/latest/download/${FONT_NAME}.zip"
+  wget -O "$ZIP_FILE" "$ZIP_URL" ||
+    wget -O "$ZIP_FILE" "https://download.fastgit.org/ryanoasis/nerd-fonts/releases/latest/download/${FONT_NAME}.zip"
 
   unzip -o "$ZIP_FILE" -d "$FONT_DIR"
   fc-cache -fv
@@ -158,11 +161,79 @@ install_plugin "zsh-syntax-highlighting" "https://github.com/zsh-users/zsh-synta
 install_plugin "fzf-tab" "https://github.com/Aloxaf/fzf-tab"
 
 # =============================
+# 部署 btop 配置
+# =============================
+echo ">>> 部署 btop 配置..."
+BTOP_CONFIG_DIR="$HOME/.config/btop"
+mkdir -p "$BTOP_CONFIG_DIR"
+
+wget -q -O "$BTOP_CONFIG_DIR/btop.conf" "$CONFIG_BASE/btop/btop.conf"
+# 修正硬编码的 home 路径
+sed -i "s|/home/dich|$HOME|" "$BTOP_CONFIG_DIR/btop.conf"
+echo "   ✓ btop.conf 已下载"
+
+mkdir -p "$BTOP_CONFIG_DIR/themes"
+for theme in catppuccin_frappe catppuccin_latte catppuccin_macchiato catppuccin_mocha; do
+  wget -q -O "$BTOP_CONFIG_DIR/themes/${theme}.theme" "$CONFIG_BASE/btop/themes/${theme}.theme"
+done
+echo "   ✓ btop themes 已下载"
+
+# =============================
+# 部署 tmux 配置 & TPM
+# =============================
+echo ">>> 部署 tmux 配置..."
+wget -q -O "$HOME/.tmux.conf" "$CONFIG_BASE/tmux/tmux.conf"
+echo "   ✓ tmux.conf 已下载"
+
+# 安装 TPM (tmux plugin manager)
+TPM_DIR="$HOME/.tmux/plugins/tpm"
+if [ ! -d "$TPM_DIR" ]; then
+  echo ">>> 安装 TPM..."
+  git clone https://github.com/tmux-plugins/tpm "$TPM_DIR"
+  echo "   ✓ TPM 已安装"
+else
+  echo "   ✓ TPM 已安装"
+fi
+
+# =============================
+# 部署 Starship 配置
+# =============================
+echo ">>> 部署 Starship 配置..."
+mkdir -p "$HOME/.config"
+wget -q -O "$HOME/.config/starship.toml" "$CONFIG_BASE/starship.toml"
+echo "   ✓ starship.toml 已下载"
+
+# =============================
+# 部署 Neovim 配置 (LazyVim)
+# =============================
+echo ">>> 部署 Neovim 配置..."
+NVIM_CONFIG_DIR="$HOME/.config/nvim"
+mkdir -p "$NVIM_CONFIG_DIR/lua/config" "$NVIM_CONFIG_DIR/lua/plugins"
+
+# 根级文件
+wget -q -O "$NVIM_CONFIG_DIR/init.lua" "$CONFIG_BASE/nvim/init.lua"
+wget -q -O "$NVIM_CONFIG_DIR/lazy-lock.json" "$CONFIG_BASE/nvim/lazy-lock.json"
+wget -q -O "$NVIM_CONFIG_DIR/lazyvim.json" "$CONFIG_BASE/nvim/lazyvim.json"
+wget -q -O "$NVIM_CONFIG_DIR/stylua.toml" "$CONFIG_BASE/nvim/stylua.toml"
+
+# lua/config/
+wget -q -O "$NVIM_CONFIG_DIR/lua/config/keymaps.lua" "$CONFIG_BASE/nvim/lua/config/keymaps.lua"
+wget -q -O "$NVIM_CONFIG_DIR/lua/config/lazy.lua" "$CONFIG_BASE/nvim/lua/config/lazy.lua"
+wget -q -O "$NVIM_CONFIG_DIR/lua/config/options.lua" "$CONFIG_BASE/nvim/lua/config/options.lua"
+
+# lua/plugins/
+wget -q -O "$NVIM_CONFIG_DIR/lua/plugins/dashboard.lua" "$CONFIG_BASE/nvim/lua/plugins/dashboard.lua"
+wget -q -O "$NVIM_CONFIG_DIR/lua/plugins/diffview.lua" "$CONFIG_BASE/nvim/lua/plugins/diffview.lua"
+wget -q -O "$NVIM_CONFIG_DIR/lua/plugins/osc52.lua" "$CONFIG_BASE/nvim/lua/plugins/osc52.lua"
+
+echo "   ✓ Neovim 配置已下载"
+
+# =============================
 # 生成 .zshrc
 # =============================
 echo ">>> 生成 ~/.zshrc..."
 
-cat > ~/.zshrc << 'EOF'
+cat >~/.zshrc <<'EOF'
 # ========================
 #  Locale & Editor
 # ========================
