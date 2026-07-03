@@ -1,0 +1,15 @@
+services:
+  deeplx:
+    image: ghcr.io/owo-network/deeplx:latest
+    container_name: deeplx
+    restart: always
+    logging:
+      options:
+        max-size: 10m
+    ports:
+      - "127.0.0.1:1188:1188"
+
+    environment:
+      - AUTHKEY=xxxxxxxxxx
+      # - TOKEN=your_access_token
+

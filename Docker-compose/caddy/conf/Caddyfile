@@ -1,0 +1,33 @@
+# 自动签发模式
+xxx.xxx.com {
+    reverse_proxy searxng:8080 {
+        header_up Host {upstream_hostport}
+    }
+}
+
+xxx.xxx.com {
+    reverse_proxy miniflux:8080 {
+        header_up Host {upstream_hostport}
+    }
+}
+
+
+
+# 自备证书模式
+
+xxx.xxx.com {
+    reverse_proxy searxng:8080
+    tls /etc/caddy_certs/fullchain.pem /etc/caddy_certs/privkey.pem
+}
+xxx.xxx.com {
+    reverse_proxy miniflux:8080
+    tls /etc/caddy_certs/fullchain.pem /etc/caddy_certs/privkey.pem
+}
+xxx.xxx.com {
+    reverse_proxy poste:80
+    tls /etc/caddy_certs/fullchain.pem /etc/caddy_certs/privkey.pem
+}
+xxx.xxx.com {
+    reverse_proxy gitea:3000
+    tls /etc/caddy_certs/fullchain.pem /etc/caddy_certs/privkey.pem
+}

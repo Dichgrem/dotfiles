@@ -1,0 +1,31 @@
+services:
+  searxng:
+    image: searxng/searxng:latest
+    container_name: searxng
+    restart: unless-stopped
+    volumes:
+      - searxng-data:/etc/searxng
+      - searxng-cache:/var/cache/searxng
+    networks:
+      - websecure
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=websecure
+      - traefik.http.routers.searxng.rule=Host(`xxx.xxx.com`)
+      - traefik.http.routers.searxng.entrypoints=websecure
+      - traefik.http.routers.searxng.tls=true
+      - traefik.http.routers.searxng.tls.certresolver=static
+      - traefik.http.routers.searxng.tls.domains[0].main=xxx.xxx.com
+      - traefik.http.routers.searxng.tls.domains[0].sans=www.xxx.xxx.com
+      - traefik.http.routers.searxng.tls.options=default
+      - traefik.http.services.searxng.loadbalancer.server.port=8080
+
+networks:
+  websecure:
+    external: true
+
+volumes:
+  searxng-data:
+    external: true
+  searxng-cache:
+    external: false

@@ -1,0 +1,52 @@
+# 自动签发模式
+
+services:
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    restart: unless-stopped
+    volumes:
+      - ./conf:/etc/caddy:ro 
+      - caddy_data:/data
+      - caddy_config:/config
+    ports:
+      - "80:80"    # 对外开放 HTTP
+      - "443:443"  # 对外开放 HTTPS（自动管理证书）
+    networks:
+      - caddy     # 与 searxng 服务同网，使用容器名解析后端
+
+networks:
+  caddy:
+    external: true
+
+volumes:
+  caddy_data:
+  caddy_config:
+
+
+
+# 自备证书模式
+
+services:
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    restart: unless-stopped
+    volumes:
+      - ./conf:/etc/caddy
+      - ./certs:/etc/caddy_certs
+      - caddy_data:/data
+      - caddy_config:/config
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - caddy
+
+volumes:
+  caddy_data:
+  caddy_config:
+
+networks:
+  caddy:
+    external: true

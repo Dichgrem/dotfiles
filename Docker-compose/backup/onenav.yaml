@@ -1,0 +1,11 @@
+version: '3'
+services:
+  onenav:
+    container_name: onenav
+    ports:
+      - "127.0.0.1:3080:80"
+    volumes:
+      - './data:/data/wwwroot/default/data'
+    image: 'helloz/onenav'
+    restart:
+      always

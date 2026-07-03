@@ -1,0 +1,13 @@
+services:
+  sub-web-modify:
+    image: youshandefeiyang/sub-web-modify
+    container_name: sub-web-modify
+    restart: always
+    privileged: false
+    ports:
+        - 8090:80
+    networks:
+      - websecure
+networks:
+  websecure:
+    external: true

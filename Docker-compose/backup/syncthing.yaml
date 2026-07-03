@@ -1,0 +1,21 @@
+version: '3'
+services:
+  syncthing:
+    image: syncthing/syncthing
+    container_name: syncthing
+    restart: unless-stopped
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 65535
+        hard: 65535
+    volumes:
+      - /var/lib/docker/volumes/syncthing/_data:/var/syncthing
+    environment:
+      - PUID=1000
+      - PGID=1000
+    ports:
+      - 127.0.0.1:8384:8384 # Web UI
+      - 22000:22000/tcp # TCP file transfers
+      - 22000:22000/udp # QUIC file transfers
+      - 21027:21027/udp # Receive local discovery broadcasts

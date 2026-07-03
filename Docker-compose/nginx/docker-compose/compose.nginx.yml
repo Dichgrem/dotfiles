@@ -1,0 +1,21 @@
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      # 如需要 HTTPS，请映射 443 端口并挂载证书目录
+      - "443:443"
+    volumes:
+      - ./nginx/poste.conf:/etc/nginx/conf.d/poste.conf:ro
+      - ./nginx/miniflux.conf:/etc/nginx/conf.d/miniflux.conf:ro
+      - ./nginx/gitea.conf:/etc/nginx/conf.d/gitea.conf:ro
+      - ./nginx/searxng.conf:/etc/nginx/conf.d/searxng.conf:ro
+      - ./nginx/certs:/home/dich/docker/nginx/certs
+    networks:
+      - nginx
+
+networks:
+  nginx:
+    external: true

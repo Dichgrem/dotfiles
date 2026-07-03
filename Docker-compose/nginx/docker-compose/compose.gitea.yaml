@@ -1,0 +1,40 @@
+services:
+  server:
+    image: gitea/gitea:latest
+    container_name: gitea
+    environment:
+      USER_UID: 1000
+      USER_GID: 1000
+      GITEA__database__DB_TYPE: postgres
+      GITEA__database__HOST: gitea-db:5432
+      GITEA__database__NAME: gitea
+      GITEA__database__USER: gitea
+      GITEA__database__PASSWD: gitea
+    restart: unless-stopped
+    networks:
+      - nginx
+    volumes:
+      - /etc/gitea:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "127.0.0.1:3000:3000"
+      - "222:22"
+    depends_on:
+      - gitea-db   
+
+  gitea-db:        # 改名，避免冲突
+    image: postgres:14
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: gitea
+      POSTGRES_PASSWORD: gitea
+      POSTGRES_DB: gitea
+    networks:
+      - nginx
+    volumes:
+      - /etc/postgres:/var/lib/postgresql/gitea/data
+
+networks:
+  nginx:
+    external: true

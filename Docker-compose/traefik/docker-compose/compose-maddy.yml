@@ -1,0 +1,64 @@
+services:
+  maddy:
+    image: foxcpp/maddy:latest
+    container_name: maddy
+    restart: unless-stopped
+    volumes:
+      - maddy-data:/data
+      - /home/dich/docker/certs/fullchain.pem:/data/tls/fullchain.pem:ro
+      - /home/dich/docker/certs/privkey.pem:/data/tls/privkey.pem:ro
+    ports:
+      - "25:25"
+      - "587:587"
+      - "993:993"
+      - "143:143"
+    environment:
+      - MADDY_DOMAIN=xxx.com
+      - MADDY_HOSTNAME=mail.xxx.com
+    networks:
+      - websecure
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=websecure
+      - traefik.http.routers.maddy.rule=Host(`mail.xxx.com`)
+      - traefik.http.routers.maddy.entrypoints=websecure
+      - traefik.http.routers.maddy.tls=true
+      - traefik.http.routers.maddy.tls.certresolver=static
+      - traefik.http.services.maddy.loadbalancer.server.port=80
+  roundcube:
+    image: roundcube/roundcubemail:latest
+    container_name: roundcube
+    restart: unless-stopped
+    depends_on:
+      - maddy
+    environment:
+      - ROUNDCUBEMAIL_DEFAULT_DOMAIN=xxx.com
+    volumes:
+      - roundcube-data:/var/roundcube
+      - /home/dich/docker/roundcube.config.php:/var/www/html/config/config.docker.inc.php:ro
+    networks:
+      - websecure
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=websecure
+      - traefik.http.routers.roundcube.rule=Host(`webmail.xxx.com`)
+      - traefik.http.routers.roundcube.entrypoints=websecure
+      - traefik.http.routers.roundcube.tls=true
+      - traefik.http.routers.roundcube.tls.certresolver=static
+      - traefik.http.services.roundcube.loadbalancer.server.port=80
+networks:
+  websecure:
+    external: true
+volumes:
+  maddy-data:
+  roundcube-data:
+
+# 创建账户
+# docker exec -it maddy maddy creds create admin@xxx.com
+# docker exec -it maddy maddy imap-acct create admin@xxx.com
+
+# 获取 DKIM 公钥：
+# bashdocker exec -it maddy cat /data/dkim_keys/xxx.com_default.dns
+
+# 改密码
+# docker exec -it maddy maddy creds password admin@xxx.com

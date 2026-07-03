@@ -1,0 +1,47 @@
+services:
+  miniflux:
+    image: miniflux/miniflux:latest
+    container_name: miniflux
+    restart: unless-stopped
+    depends_on:
+      miniflux-db:
+        condition: service_healthy
+    environment:
+      - DATABASE_URL=postgres://miniflux:secret@miniflux-db/miniflux?sslmode=disable
+      - RUN_MIGRATIONS=1
+      - CREATE_ADMIN=1
+      - ADMIN_USERNAME=${admin_username}
+      - ADMIN_PASSWORD=${admin_password}
+    networks:
+      - websecure
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=websecure
+      - traefik.http.routers.miniflux.rule=Host(`xxx.xxx.com`)
+      - traefik.http.routers.miniflux.entrypoints=websecure
+      - traefik.http.routers.miniflux.tls=true
+      - traefik.http.services.miniflux.loadbalancer.server.port=8080
+
+  miniflux-db:
+    image: postgres:15
+    container_name: miniflux-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=${db_user}
+      - POSTGRES_PASSWORD=${db_password}
+      - POSTGRES_DB=miniflux
+    volumes:
+      - miniflux-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "miniflux"]
+      interval: 10s
+      start_period: 30s
+    networks:
+      - websecure
+
+networks:
+  websecure:
+    external: true
+volumes:
+  miniflux-db-data:
+    external: true

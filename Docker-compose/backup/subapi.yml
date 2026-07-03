@@ -1,0 +1,12 @@
+services:
+  subconverter:
+    image: asdlokj1qpi23/subconverter:latest
+    container_name: subconverter
+    restart: always
+    ports:
+      - "15051:25500"
+    networks:
+      - websecure
+networks:
+  websecure:
+    external: true

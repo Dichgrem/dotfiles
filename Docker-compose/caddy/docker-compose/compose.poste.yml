@@ -1,0 +1,34 @@
+services:
+  mailserver:
+    image: analogic/poste.io
+    container_name: poste
+    hostname: mail.xxx.com
+    restart: unless-stopped
+    ports:
+      - "25:25"
+      - "110:110"
+      - "143:143"
+      - "587:587"
+      - "993:993"
+      - "995:995"
+      - "4190:4190"
+      - "465:465"
+      - "127.0.0.1:8808:80"
+      - "127.0.0.1:8843:443"
+    environment:
+      - LETSENCRYPT_EMAIL=admin@xxx.com
+      - LETSENCRYPT_HOST=mail.xxx.com
+      - VIRTUAL_HOST=mail.xxx.com
+      - DISABLE_CLAMAV=TRUE
+      - TZ=Asia/Shanghai
+      - HTTPS=OFF
+      - POSTEO_ADMIN_PASSWORD=yourpassword
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/mail-data:/data
+    networks:
+      - caddy
+
+networks:
+  caddy:
+    external: true

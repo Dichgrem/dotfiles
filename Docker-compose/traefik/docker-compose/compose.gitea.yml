@@ -1,0 +1,51 @@
+services:
+  gitea:
+    image: gitea/gitea:latest
+    container_name: gitea
+    environment:
+      USER_UID: 1000
+      USER_GID: 1000
+      GITEA__database__DB_TYPE: postgres
+      GITEA__database__HOST: gitea-db:5432
+      GITEA__database__NAME: gitea
+      GITEA__database__USER: gitea
+      GITEA__database__PASSWD: gitea
+    restart: unless-stopped
+    networks:
+      - websecure
+    volumes:
+      - gitea-data:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=websecure"
+      - "traefik.http.routers.gitea.rule=Host(`xxx.xxx.com`)"
+      - "traefik.http.routers.gitea.entrypoints=websecure"
+      - "traefik.http.routers.gitea.tls=true"
+      - "traefik.http.services.gitea.loadbalancer.server.port=3000"
+    depends_on:
+      - gitea-db
+
+  gitea-db:
+    image: postgres:14
+    container_name: gitea-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: gitea
+      POSTGRES_PASSWORD: gitea
+      POSTGRES_DB: gitea
+    networks:
+      - websecure
+    volumes:
+      - gitea-db-data:/var/lib/postgresql/data
+
+networks:
+  websecure:
+    external: true
+
+volumes:
+  gitea-data:
+    external: true
+  gitea-db-data:
+    external: true
