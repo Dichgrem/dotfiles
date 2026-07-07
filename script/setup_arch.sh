@@ -101,7 +101,7 @@ ZIP_URL="https://github.com/ryanoasis/nerd-fonts/releases/latest/download/${FONT
 ZIP_FILE="/tmp/${FONT_NAME}.zip"
 FONT_DIR="$HOME/.local/share/fonts"
 
-if [ ! -f "$FONT_DIR/JetBrains Mono Nerd Font Mono.ttf" ]; then
+if ! ls "$FONT_DIR"/JetBrainsMono* 2>/dev/null | grep -q .; then
   echo ">>> Downloading Nerd Font..."
 
   mkdir -p "$FONT_DIR"
@@ -173,6 +173,11 @@ if [ ! -d "$TPM_DIR" ]; then
 else
   echo "   ✓ TPM 已安装"
 fi
+
+# 自动安装 tmux 插件
+echo ">>> 安装 tmux 插件..."
+bash "$TPM_DIR/bin/install_plugins" 2>/dev/null || true
+echo "   ✓ tmux 插件已安装"
 
 # =============================
 # 部署 Starship 配置
@@ -260,6 +265,15 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias ..='cd ..'
 alias ...='cd ../..'
+
+# tmux: 无参数时 attach 或自动 new-session
+tmux() {
+  if [ $# -eq 0 ]; then
+    command tmux attach 2>/dev/null || command tmux new-session
+  else
+    command tmux "$@"
+  fi
+}
 
 # ========================
 #  Completion
