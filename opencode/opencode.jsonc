@@ -1,0 +1,61 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "instructions": [
+    "/home/dich/.config/opencode/environment-rules.md"
+  ],
+
+  "plugin": ["./plugins/opencode-context-cache.mjs"],
+
+  "provider": {
+    "deepseek": {
+      "npm": "@ai-sdk/anthropic",
+      "name": "DeepSeek V4",
+      "options": {
+        "apiKey": "xxxxxxxxxxxxxxxxx",
+        "baseURL": "http://xxx.xxx.xxx/apps/anthropic/v1",
+        "timeout": 300000
+      },
+      "models": {
+        "deepseek-v4-pro": {
+          "name": "DeepSeek V4 Pro"
+        },
+        "deepseek-v4-flash": {
+          "name": "DeepSeek V4 Flash"
+        }
+      }
+    }
+  },
+
+  "model": "deepseek/deepseek-v4-pro",
+
+  "small_model": "deepseek/deepseek-v4-flash",
+
+  "permission": "allow",
+
+  "mcp": {
+    "codegraph": {
+      "type": "local",
+      "command": [
+        "codegraph",
+        "serve",
+        "--mcp"
+      ],
+      "enabled": true
+    },
+
+    "gh_grep": {
+      "type": "remote",
+      "url": "https://mcp.grep.app"
+    },
+
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "enabled": true,
+      "headers": {
+        "CONTEXT7_API_KEY": "ctx7sk-xxxxxxxxxxxxxxxxxxxxx"
+      }
+    }
+  }
+}
