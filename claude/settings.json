@@ -1,0 +1,61 @@
+{
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "xxxxxxxxxxxxxx",
+    "API_TIMEOUT_MS": "300000",
+    "ANTHROPIC_BASE_URL": "xxx.xxx.xxx/apps/anthropic",
+    "MCP_TOOL_TIMEOUT": "35000",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "deepseek-v4-flash",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "deepseek-v4-pro",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "deepseek-v4-pro"
+  },
+  "permissions": {
+    "defaultMode": "bypassPermissions",
+    "allow": [
+      "mcp__codegraph__*"
+    ]
+  },
+  "enabledPlugins": {
+    "claude-hud@claude-hud": false,
+    "glm-plan-usage@zai-coding-plugins": false,
+    "claude-mem@thedotmack": true,
+    "superpowers@claude-plugins-official": true,
+    "omnisharp@claude-code-lsps": false
+  },
+  "extraKnownMarketplaces": {
+    "superpowers-dev": {
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers"
+      }
+    }
+  },
+  "language": "中文",
+  "alwaysThinkingEnabled": true,
+  "skipDangerousModePermissionPrompt": true,
+  "theme": "dark",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rtk hook claude"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "codegraph prompt-hook"
+          }
+        ]
+      }
+    ]
+  }
+}
+
