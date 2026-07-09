@@ -1,0 +1,111 @@
+{
+  "$help": "https://aka.ms/terminal-documentation",
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "actions": [
+    {
+      "command": {
+        "action": "sendInput",
+        "input": "\u001b[27;5;9~"
+      },
+      "id": "User.sendInput.950E70DA"
+    },
+    {
+      "command": {
+        "action": "sendInput",
+        "input": "\u001b[27;6;9~"
+      },
+      "id": "User.sendInput.19E1ABA9"
+    }
+  ],
+  "copyFormatting": "none",
+  "copyOnSelect": true,
+  "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+  "keybindings": [
+    {
+      "id": "Terminal.CopyToClipboard",
+      "keys": "ctrl+c"
+    },
+    {
+      "id": "User.sendInput.19E1ABA9",
+      "keys": "ctrl+shift+tab"
+    },
+    {
+      "id": "User.sendInput.950E70DA",
+      "keys": "ctrl+tab"
+    },
+    {
+      "id": "Terminal.PasteFromClipboard",
+      "keys": "ctrl+v"
+    },
+    {
+      "id": "Terminal.FindText",
+      "keys": "ctrl+shift+f"
+    },
+    {
+      "id": "Terminal.DuplicatePaneAuto",
+      "keys": "alt+shift+d"
+    }
+  ],
+  "newTabMenu": [
+    {
+      "type": "remainingProfiles"
+    }
+  ],
+  "profiles": {
+    "defaults": {
+      "colorScheme": "One Half Dark",
+      "font": {
+        "cellHeight": "1.2",
+        "face": "Sarasa Term SC Nerd",
+        "size": 12.5
+      },
+      "padding": "0",
+      "scrollbarState": "hidden"
+    },
+    "list": [
+      {
+        "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "font": {
+          "face": "JetBrainsMono Nerd Font Mono"
+        },
+        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+        "hidden": false,
+        "name": "Windows PowerShell"
+      },
+      {
+        "commandline": "%SystemRoot%\\System32\\cmd.exe",
+        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+        "hidden": false,
+        "name": "\u547d\u4ee4\u63d0\u793a\u7b26"
+      },
+      {
+        "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+        "hidden": false,
+        "name": "Azure Cloud Shell",
+        "source": "Windows.Terminal.Azure"
+      },
+      {
+        "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+        "hidden": false,
+        "name": "Ubuntu",
+        "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+      },
+      {
+        "guid": "{27a70cc9-8151-50d8-bb2b-65026d51c6ba}",
+        "hidden": false,
+        "name": "Ubuntu",
+        "source": "Microsoft.WSL"
+      },
+      {
+        "guid": "{8410da0c-77fd-5374-84a2-104edaa01a8b}",
+        "hidden": false,
+        "name": "archlinux",
+        "source": "Microsoft.WSL",
+        "startingDirectory": "~"
+      }
+    ]
+  },
+  "schemes": [],
+  "tabWidthMode": "equal",
+  "themes": []
+}
