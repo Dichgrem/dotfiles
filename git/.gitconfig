@@ -1,0 +1,27 @@
+[user]
+    name = yourname
+    email = yourmail@xxx.com
+
+[merge]
+    conflictstyle = zdiff3
+
+[diff]
+    colorMoved = default
+
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    line-numbers = true
+    syntax-theme = Dracula
+    light = false
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
