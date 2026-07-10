@@ -5,7 +5,10 @@
     "/home/dich/.config/opencode/environment-rules.md"
   ],
 
-  "plugin": ["./plugins/opencode-context-cache.mjs"],
+  "plugin": [
+    "./plugins/opencode-context-cache.mjs",
+    "@cortexkit/opencode-magic-context@latest"
+  ],
 
   "provider": {
     "deepseek": {
@@ -57,5 +60,9 @@
         "CONTEXT7_API_KEY": "ctx7sk-xxxxxxxxxxxxxxxxxxxxx"
       }
     }
+  },
+  "compaction": {
+    "auto": false,
+    "prune": false
   }
 }
