@@ -7,7 +7,7 @@
             "command": 
             {
                 "action": "sendInput",
-                "input": "\u001b[27;5;9~"
+                "input": "\u001b[9;5u"
             },
             "id": "User.sendInput.950E70DA"
         },
@@ -15,7 +15,7 @@
             "command": 
             {
                 "action": "sendInput",
-                "input": "\u001b[27;6;9~"
+                "input": "\u001b[9;6u"
             },
             "id": "User.sendInput.19E1ABA9"
         },
@@ -41,7 +41,7 @@
             "keys": "ctrl+c"
         },
         {
-            "id": null,
+            "id": "User.sendInput.19E1ABA9",
             "keys": "ctrl+shift+tab"
         },
         {
@@ -169,7 +169,7 @@
             "keys": "ctrl+shift+m"
         },
         {
-            "id": null,
+            "id": "User.sendInput.950E70DA",
             "keys": "ctrl+tab"
         },
         {
