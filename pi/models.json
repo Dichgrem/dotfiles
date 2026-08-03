@@ -4,7 +4,6 @@
       "name": "DeepSeek V4",
       "baseUrl": "http://xxxx.xxxx.com:xxxx/apps/anthropic",
       "api": "anthropic-messages",
-      "apiKey": "${DEEPSEEK_API_KEY}",
       "compat": {
         "supportsEagerToolInputStreaming": true,
         "supportsLongCacheRetention": true,
@@ -17,6 +16,7 @@
           "id": "deepseek-v4-pro",
           "name": "DeepSeek V4 Pro",
           "reasoning": true,
+          "thinkingLevelMap": { "minimal": null, "low": null, "medium": null, "high": "high", "max": "max" },
           "input": ["text"],
           "contextWindow": 1048576,
           "maxTokens": 384000,
@@ -31,6 +31,7 @@
           "id": "deepseek-v4-flash",
           "name": "DeepSeek V4 Flash",
           "reasoning": true,
+          "thinkingLevelMap": { "minimal": null, "low": null, "medium": null, "high": "high", "max": "max" },
           "input": ["text"],
           "contextWindow": 1048576,
           "maxTokens": 384000,
