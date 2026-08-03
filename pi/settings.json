@@ -16,8 +16,6 @@
     "npm:@narumitw/pi-subagents",
     "npm:@narumitw/pi-lsp",
     "npm:pi-memory",
-    "npm:pi-taskflow",
-    "npm:pi-lean-ctx",
     "npm:pi-cache-optimizer",
     "npm:pi-grilling-skill"
   ],
