@@ -2,43 +2,43 @@
   "providers": {
     "deepseek-custom": {
       "name": "DeepSeek V4",
-      "baseUrl": "http://coding.qu06.cn:9110/apps/anthropic",
+      "baseUrl": "http://xxxx.xxxx.com:xxxx/apps/anthropic",
       "api": "anthropic-messages",
       "apiKey": "${DEEPSEEK_API_KEY}",
       "compat": {
-        "supportsEagerToolInputStreaming": false,
-        "supportsLongCacheRetention": false,
-        "supportsCacheControlOnTools": false,
+        "supportsEagerToolInputStreaming": true,
+        "supportsLongCacheRetention": true,
+        "supportsCacheControlOnTools": true,
         "supportsStrictTools": false,
-        "sendSessionAffinityHeaders": false
+        "sendSessionAffinityHeaders": true
       },
       "models": [
         {
           "id": "deepseek-v4-pro",
           "name": "DeepSeek V4 Pro",
-          "reasoning": false,
+          "reasoning": true,
           "input": ["text"],
-          "contextWindow": 200000,
-          "maxTokens": 32768,
+          "contextWindow": 1048576,
+          "maxTokens": 384000,
           "cost": {
-            "input": 0.55,
-            "output": 2.19,
-            "cacheRead": 0,
-            "cacheWrite": 0
+            "input": 0.435,
+            "output": 0.87,
+            "cacheRead": 0.003625,
+            "cacheWrite": 0.435
           }
         },
         {
           "id": "deepseek-v4-flash",
           "name": "DeepSeek V4 Flash",
-          "reasoning": false,
+          "reasoning": true,
           "input": ["text"],
-          "contextWindow": 200000,
-          "maxTokens": 32768,
+          "contextWindow": 1048576,
+          "maxTokens": 384000,
           "cost": {
-            "input": 0.27,
-            "output": 1.10,
-            "cacheRead": 0,
-            "cacheWrite": 0
+            "input": 0.14,
+            "output": 0.28,
+            "cacheRead": 0.0028,
+            "cacheWrite": 0.14
           }
         }
       ]
