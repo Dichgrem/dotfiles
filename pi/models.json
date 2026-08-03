@@ -1,0 +1,47 @@
+{
+  "providers": {
+    "deepseek-custom": {
+      "name": "DeepSeek V4",
+      "baseUrl": "http://coding.qu06.cn:9110/apps/anthropic",
+      "api": "anthropic-messages",
+      "apiKey": "${DEEPSEEK_API_KEY}",
+      "compat": {
+        "supportsEagerToolInputStreaming": false,
+        "supportsLongCacheRetention": false,
+        "supportsCacheControlOnTools": false,
+        "supportsStrictTools": false,
+        "sendSessionAffinityHeaders": false
+      },
+      "models": [
+        {
+          "id": "deepseek-v4-pro",
+          "name": "DeepSeek V4 Pro",
+          "reasoning": false,
+          "input": ["text"],
+          "contextWindow": 200000,
+          "maxTokens": 32768,
+          "cost": {
+            "input": 0.55,
+            "output": 2.19,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "deepseek-v4-flash",
+          "name": "DeepSeek V4 Flash",
+          "reasoning": false,
+          "input": ["text"],
+          "contextWindow": 200000,
+          "maxTokens": 32768,
+          "cost": {
+            "input": 0.27,
+            "output": 1.10,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        }
+      ]
+    }
+  }
+}

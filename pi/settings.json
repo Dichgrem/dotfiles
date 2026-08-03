@@ -1,0 +1,24 @@
+{
+  "defaultProvider": "deepseek-custom",
+  "defaultModel": "deepseek-v4-flash",
+  "theme": "dark",
+  "defaultProjectTrust": "always",
+  "compaction": {
+    "enabled": true,
+    "reserveTokens": 16384,
+    "keepRecentTokens": 20000
+  },
+  "lastChangelogVersion": "0.83.0",
+  "showCacheMissNotices": false,
+  "packages": [
+    "npm:pi-mcp-adapter",
+    "npm:@narumitw/pi-plan-mode",
+    "npm:@narumitw/pi-subagents",
+    "npm:@narumitw/pi-lsp",
+    "npm:pi-memory",
+    "npm:pi-taskflow",
+    "npm:pi-lean-ctx",
+    "npm:pi-cache-optimizer",
+    "npm:pi-grilling-skill"
+  ]
+}
