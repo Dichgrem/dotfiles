@@ -20,5 +20,6 @@
     "npm:pi-lean-ctx",
     "npm:pi-cache-optimizer",
     "npm:pi-grilling-skill"
-  ]
+  ],
+  "defaultThinkingLevel": "medium"
 }
