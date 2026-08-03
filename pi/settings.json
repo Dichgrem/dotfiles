@@ -5,8 +5,8 @@
   "defaultProjectTrust": "always",
   "compaction": {
     "enabled": true,
-    "reserveTokens": 16384,
-    "keepRecentTokens": 20000
+    "reserveTokens": 32768,
+    "keepRecentTokens": 40000
   },
   "lastChangelogVersion": "0.83.0",
   "showCacheMissNotices": false,
@@ -21,5 +21,5 @@
     "npm:pi-cache-optimizer",
     "npm:pi-grilling-skill"
   ],
-  "defaultThinkingLevel": "medium"
+  "defaultThinkingLevel": "high"
 }
