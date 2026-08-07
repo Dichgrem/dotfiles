@@ -2,11 +2,10 @@
   "mcpServers": {
     "codegraph": {
       "command": "codegraph",
-      "args": [
-        "serve",
-        "--mcp",
-        "--no-watch"
-      ],
+      "args": ["serve", "--mcp"],
+      "env": {
+        "CODEGRAPH_DAEMON_IDLE_TIMEOUT_MS": "1800000"
+      },
       "directTools": true
     },
     "context7": {
@@ -22,6 +21,10 @@
       "env": {
         "TAVILY_API_KEY": "${TAVILY_API_KEY}"
       }
+    },
+    "gh_grep": {
+      "type": "remote",
+      "url": "https://mcp.grep.app"
     }
   }
 }
