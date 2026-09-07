@@ -1,6 +1,11 @@
 {
-  "defaultProvider": "deepseek-custom",
-  "defaultModel": "deepseek-v4-flash",
+  "defaultProvider": "deepseek",
+  "defaultModel": "deepseek-flash",
+  "npmCommand": [
+    "npm",
+    "--prefix",
+    "C:\\Users\\Admin\\AppData\\Roaming\\npm"
+  ],
   "theme": "dark",
   "defaultProjectTrust": "always",
   "compaction": {
@@ -8,16 +13,27 @@
     "reserveTokens": 32768,
     "keepRecentTokens": 40000
   },
-  "lastChangelogVersion": "0.83.0",
+  "lastChangelogVersion": "0.99.1",
   "showCacheMissNotices": false,
   "packages": [
-    "npm:pi-mcp-adapter",
     "npm:@narumitw/pi-plan-mode",
     "npm:@narumitw/pi-subagents",
     "npm:@narumitw/pi-lsp",
     "npm:pi-memory",
     "npm:pi-cache-optimizer",
-    "npm:pi-grilling-skill"
+    "npm:pi-grilling-skill",
+    "npm:pi-btw"
   ],
-  "defaultThinkingLevel": "high"
+  "defaultThinkingLevel": "high",
+  "followUpMode": "one-at-a-time",
+  "transport": "auto",
+  "tuiMode": "fullscreen",
+  "shellPath": "C:\\Program Files\\Git\\bin\\bash.exe",
+  "defaultTools": [
+    "read",
+    "bash",
+    "edit",
+    "write"
+  ],
+  "treeFilterMode": "default"
 }

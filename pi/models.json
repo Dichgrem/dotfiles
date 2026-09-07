@@ -16,8 +16,16 @@
           "id": "deepseek-v4-pro",
           "name": "DeepSeek V4 Pro",
           "reasoning": true,
-          "thinkingLevelMap": { "minimal": null, "low": null, "medium": null, "high": "high", "max": "max" },
-          "input": ["text"],
+          "thinkingLevelMap": {
+            "minimal": null,
+            "low": null,
+            "medium": null,
+            "high": "high",
+            "max": "max"
+          },
+          "input": [
+            "text"
+          ],
           "contextWindow": 1048576,
           "maxTokens": 384000,
           "cost": {
@@ -31,8 +39,17 @@
           "id": "deepseek-v4-flash",
           "name": "DeepSeek V4 Flash",
           "reasoning": true,
-          "thinkingLevelMap": { "minimal": null, "low": null, "medium": null, "high": "high", "max": "max" },
-          "input": ["text"],
+          "thinkingLevelMap": {
+            "minimal": null,
+            "low": null,
+            "medium": null,
+            "high": "high",
+            "max": "max"
+          },
+          "input": [
+            "text",
+            "image"
+          ],
           "contextWindow": 1048576,
           "maxTokens": 384000,
           "cost": {
@@ -43,6 +60,26 @@
           }
         }
       ]
+    },
+    "deepseek": {
+      "modelOverrides": {
+        "deepseek-v4-pro": {
+          "compat": {
+            "supportsLongCacheRetention": true,
+            "sendSessionAffinityHeaders": true
+          }
+        },
+        "deepseek-v4-flash": {
+          "input": [
+            "text",
+            "image"
+          ],
+          "compat": {
+            "supportsLongCacheRetention": true,
+            "sendSessionAffinityHeaders": true
+          }
+        }
+      }
     }
   }
 }

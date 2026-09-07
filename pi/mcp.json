@@ -2,29 +2,42 @@
   "mcpServers": {
     "codegraph": {
       "command": "codegraph",
-      "args": ["serve", "--mcp"],
+      "args": [
+        "serve",
+        "--mcp"
+      ],
       "env": {
         "CODEGRAPH_DAEMON_IDLE_TIMEOUT_MS": "1800000"
       },
-      "directTools": true
+      "timeout": 300,
+      "exposure": "direct"
     },
     "context7": {
       "url": "https://mcp.context7.com/mcp",
       "headers": {
-        "CONTEXT7_API_KEY": "${CONTEXT7_API_KEY}"
+        "CONTEXT7_API_KEY": "xxxxxxxxxxxxxxxxxxxxxxxx"
       },
-      "directTools": true
+      "exposure": "direct"
     },
     "tavily": {
       "command": "npx",
-      "args": ["-y", "tavily-mcp"],
+      "args": [
+        "-y",
+        "tavily-mcp"
+      ],
       "env": {
-        "TAVILY_API_KEY": "${TAVILY_API_KEY}"
+        "TAVILY_API_KEY": "xxxxxxxxxxxxxxxxxxxxxxxxxx"
       }
     },
     "gh_grep": {
-      "type": "remote",
       "url": "https://mcp.grep.app"
+    },
+    "officecli": {
+      "command": "C:\\Users\\Admin\\.npm-global\\node_modules\\@officecli\\officecli\\vendor\\officecli.exe",
+      "args": [
+        "mcp"
+      ],
+      "exposure": "direct"
     }
   }
 }
