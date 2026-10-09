@@ -13,7 +13,7 @@
     "reserveTokens": 32768,
     "keepRecentTokens": 40000
   },
-  "lastChangelogVersion": "0.99.1",
+  "lastChangelogVersion": "1.1.0",
   "showCacheMissNotices": false,
   "packages": [
     "npm:@narumitw/pi-plan-mode",
@@ -30,10 +30,11 @@
   "tuiMode": "fullscreen",
   "shellPath": "C:\\Program Files\\Git\\bin\\bash.exe",
   "defaultTools": [
-    "read",
-    "bash",
-    "edit",
-    "write"
+    "+grep",
+    "+find",
+    "+ls",
+    "+powershell",
+    "+codemode"
   ],
   "treeFilterMode": "default"
 }
