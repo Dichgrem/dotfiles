@@ -1,0 +1,24 @@
+{
+  "thinkingLevel": "inherit",
+  "defaultPlanTools": [
+    "read",
+    "bash",
+    "powershell",
+    "grep",
+    "find",
+    "ls",
+    "codemode",
+    "mcp__codegraph__codegraph_explore",
+    "mcp__context7__resolve_library_id",
+    "mcp__context7__query_docs",
+    "mcp__gh_grep__searchGitHub",
+    "mcp__tavily__tavily_search",
+    "mcp__tavily__tavily_extract"
+  ],
+  "safeSubcommands": {
+    "svn": ["diff", "di", "status", "st", "log", "info", "cat", "list", "ls", "blame", "praise", "proplist", "propget"],
+    "just": ["--list", "-l", "--summary"],
+    "codegraph": ["node", "context", "callers", "callees", "impact", "affected", "files", "status"],
+    "npm": ["view", "ls", "outdated", "why", "explain"]
+  }
+}

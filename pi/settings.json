@@ -13,12 +13,11 @@
     "reserveTokens": 32768,
     "keepRecentTokens": 40000
   },
-  "lastChangelogVersion": "1.1.0",
+  "lastChangelogVersion": "1.2.0",
   "showCacheMissNotices": false,
   "packages": [
     "npm:@narumitw/pi-plan-mode",
     "npm:@narumitw/pi-subagents",
-    "npm:@narumitw/pi-lsp",
     "npm:pi-memory",
     "npm:pi-cache-optimizer",
     "npm:pi-grilling-skill",
